@@ -1,12 +1,22 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Htag, Button, Ptag, Tag } from "../components/index";
+import { useEffect, useState } from "react";
+import { Htag, Button, Ptag, Tag, Rating } from "../components/index";
 
 export default function Home(): JSX.Element {
+  const [counter, setCounter] = useState<number>(0);
+  useEffect(() => {
+    console.log("123");
+  }, [counter]);
   return (
     <>
-      <Htag tag="h1">Hello, world!</Htag>
-      <Button appearance="primary">primary button</Button>
+      <Htag tag="h1">{counter}</Htag>
+      <Button
+        appearance="primary"
+        onClick={() => setCounter((counter) => counter + 1)}
+      >
+        primary button
+      </Button>
       <Button appearance="ghost" arrow="right">
         ghost button
       </Button>
@@ -16,6 +26,7 @@ export default function Home(): JSX.Element {
       <Tag href="#" color="primary">
         hi
       </Tag>
+      <Rating rating={4} />
     </>
   );
 }
