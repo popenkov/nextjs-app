@@ -4,19 +4,12 @@ import { useEffect, useState } from "react";
 import { Htag, Button, Ptag, Tag, Rating } from "../components/index";
 
 export default function Home(): JSX.Element {
-  const [counter, setCounter] = useState<number>(0);
-  useEffect(() => {
-    console.log("123");
-  }, [counter]);
+  const [rating, setRating] = useState<number>(4);
+
   return (
     <>
-      <Htag tag="h1">{counter}</Htag>
-      <Button
-        appearance="primary"
-        onClick={() => setCounter((counter) => counter + 1)}
-      >
-        primary button
-      </Button>
+      <Htag tag="h1">hi</Htag>
+      <Button appearance="primary">primary button</Button>
       <Button appearance="ghost" arrow="right">
         ghost button
       </Button>
@@ -26,7 +19,7 @@ export default function Home(): JSX.Element {
       <Tag href="#" color="primary">
         hi
       </Tag>
-      <Rating rating={4} />
+      <Rating rating={rating} isEditable={true} setRating={setRating} />
     </>
   );
 }

@@ -1,4 +1,4 @@
-.filled {
+.filled svg {
   fill: var(--primary);
 }
 
@@ -6,7 +6,7 @@
   display: inline-block;
 }
 
-.star {
+.star svg {
   margin-right: 5px;
 }
 
