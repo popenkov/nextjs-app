@@ -2,8 +2,9 @@ import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Htag, Button, Ptag, Tag, Rating } from "../components/index";
+import { Layout, withLayout } from "../layout/Layout";
 
-export default function Home(): JSX.Element {
+function Home(): JSX.Element {
   const [rating, setRating] = useState<number>(4);
 
   return (
@@ -23,3 +24,5 @@ export default function Home(): JSX.Element {
     </>
   );
 }
+
+export default withLayout(Home);
