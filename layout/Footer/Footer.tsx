@@ -1,5 +1,6 @@
 import { FooterProps } from "./Footer.props";
-import cn from "classnames";
+/* import cn from "classnames"; */
+const cn = require("classnames");
 import styles from "./Footer.module.css";
 import { format } from "date-fns";
 

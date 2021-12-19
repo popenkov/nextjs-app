@@ -1,5 +1,6 @@
 import { TagProps } from "./Tag.props";
-import cn from "classnames";
+/* import cn from "classnames"; */
+const cn = require("classnames");
 import styles from "./Tag.module.css";
 
 export const Tag = ({

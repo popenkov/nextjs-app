@@ -1,5 +1,6 @@
 import { RatingProps } from "./Rating.props";
-import cn from "classnames";
+/* import cn from "classnames"; */
+const cn = require("classnames");
 import styles from "./Rating.module.css";
 import StarIcon from "./star.svg";
 import { useEffect, useState, KeyboardEvent } from "react";

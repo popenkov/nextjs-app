@@ -1,10 +1,12 @@
 import { LayoutProps } from "./Layout.props";
-import cn from "classnames";
+/* import cn from "classnames"; */
+const cn = require("classnames");
 import styles from "./Layout.module.css";
 import React, { FunctionComponent } from "react";
 import { Header } from "./Header/Header";
 import { Sidebar } from "./Sidebar/Sidebar";
 import { Footer } from "./Footer/Footer";
+import { AppContextProvider, IAppContext } from "../context/app.context";
 
 const Layout = ({ children, ...props }: LayoutProps): JSX.Element => {
   return (
@@ -17,15 +19,16 @@ const Layout = ({ children, ...props }: LayoutProps): JSX.Element => {
   );
 };
 
-export const withLayout = <T extends Record<string, unknown>>(
+export const withLayout = <T extends Record<string, unknown> & IAppContext>(
   Component: FunctionComponent<T>
 ) => {
-  //возвращает новый функциональный компонент, те функцию.
   return function withLayoutComponent(props: T): JSX.Element {
     return (
-      <Layout>
-        <Component {...props} />
-      </Layout>
+      <AppContextProvider menu={props.menu} firstCategory={props.firstCategory}>
+        <Layout>
+          <Component {...props} />
+        </Layout>
+      </AppContextProvider>
     );
   };
 };

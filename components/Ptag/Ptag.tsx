@@ -1,5 +1,6 @@
 import { PtagProps } from "./Ptag.props";
-import cn from "classnames";
+/* import cn from "classnames"; */
+const cn = require("classnames");
 import styles from "./Ptag.module.css";
 
 export const Ptag = ({
